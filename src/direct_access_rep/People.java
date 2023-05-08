@@ -2,9 +2,7 @@ package direct_access_rep;
 
 
 public class People {
-<<<<<<< Updated upstream
 
-=======
 	public static final int RECORD_SIZE = 44;
     private int id;
     private String name;
@@ -59,5 +57,4 @@ public class People {
     public void setPhone(String phone) {
         this.phone = phone;
     }
->>>>>>> Stashed changes
 }
