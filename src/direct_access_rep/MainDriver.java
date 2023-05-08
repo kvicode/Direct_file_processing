@@ -6,6 +6,7 @@ public class MainDriver {
 
 	public static void main(String[] args) 
 		throws IOException{
+		//Change your path Accordingly
 		Database fe = new Database("C:/Users/bobb1/OneDrive/Desktop/CPP Stuff/CS4310/Direct_file_processing/Test.dat");
 
 		      fe.insertRecord(new Records(1, "Kevin", "Vi", "kv@hotmail.com"));
