@@ -15,8 +15,7 @@ public class MainDriver {
 		      fe.showAllRecords();
 		      fe.updateRecord(new Records(4,"Tony","Parker", "tp@somemail.com"));
 		      fe.showAllRecords();
-		      fe.deleteRecord(new Records(1,"Kevin","Vi",
-		         "kv@hotmail.com"));
+		      fe.deleteRecord(new Records(1,"Kevin","Vi","kv@hotmail.com"));
 		      fe.showAllRecords();
 		      fe.close();
 	}
