@@ -29,24 +29,20 @@ public class Records extends People {
     }
 
     private String readString(RandomAccessFile file) throws IOException {
-        StringBuilder builder = new StringBuilder();
+        char[] chars = new char[15];
         for (int i = 0; i < 15; i++) {
-            char c = file.readChar();
-            if (c != '\0') {
-                builder.append(c);
-            }
+            chars[i] = file.readChar();
         }
-        return builder.toString();
+        return new String(chars).replace("\0", "");
     }
 
-    private void writeString(RandomAccessFile file, String f) throws IOException {
-        StringBuilder buffer;
-        if (f != null) {
-            buffer = new StringBuilder(f);
-        } else {
-            buffer = new StringBuilder(15);
+    private void writeString(RandomAccessFile file, String str) throws IOException {
+        StringBuilder builder = new StringBuilder();
+        builder.append(str);
+        int paddingLength = 15 - builder.length();
+        for (int i = 0; i < paddingLength; i++) {
+            builder.append('\0');
         }
-        buffer.setLength(15);
-        file.writeChars(buffer.toString());
+        file.writeChars(builder.toString());
     }
 }
